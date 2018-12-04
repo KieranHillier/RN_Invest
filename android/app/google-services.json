@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "809312729554",
+    "firebase_url": "https://bloop-89289.firebaseio.com",
+    "project_id": "bloop-89289",
+    "storage_bucket": "bloop-89289.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809312729554:android:d45b483ec5e721c1",
+        "android_client_info": {
+          "package_name": "com.bloopinvest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809312729554-v7ml3rg17uae8sdpophr3p94fchue8v7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvMiFtp-Yw2RG7oMWMYcA3a3RKVTMZEhI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
