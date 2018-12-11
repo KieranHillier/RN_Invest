@@ -233,7 +233,7 @@ class DiscoverStockScreen extends Component {
 
         <View style={styles.header}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('PortfolioScreenContainer')} style={styles.headerIcons}></TouchableOpacity>
-          <TextInput style={styles.headerSearch}></TextInput>
+          <Text onPress={() => this.props.navigation.navigate('SearchScreenContainer')} style={styles.headerSearch}></Text>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('DashBoardScreenContainer')} style={styles.headerIconsRight}></TouchableOpacity>
         </View>
 
@@ -252,7 +252,7 @@ class DiscoverStockScreen extends Component {
             <View style={[styles.featuredDot, currentIndex2 == 4 ? styles.featuredDotActive : styles.featuredDotInactive]}></View>
           </View>
 
-          <Text style={styles.stockCardTitle}>{this.props.authUser}</Text>
+          <Text style={styles.stockCardTitle}>TODAYS LOSERS</Text>
           <ViewPagerAndroid style={styles.stockCardContainer} initialPage={0} pageMargin={15} onPageSelected={this.switchFeatured}>
             {this.renderCards()}
           </ViewPagerAndroid>

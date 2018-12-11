@@ -12,20 +12,66 @@ import FeaturedStockCard from '../../../components/featuredStockCard'
 import colors from '../../../assets/colors/theme'
 import stocks from '../../../data/stocks'
 import { connect } from 'react-redux'
+import firebase from 'react-native-firebase'
+
 
 var width = Dimensions.get('window').width; //full width
 var height = Dimensions.get('window').height; //full height
 
 class PortfolioScreen extends Component {
-  render() {
 
+  constructor() {
+    super()
+    this.state = {
+      watchlist: []
+    }
+  }
+
+  componentDidMount() {
+    const currentID = this.props.authUser
+    console.log(currentID)
+
+    // this.ref.collection('users').doc(currentID).update({
+    //   watchlist: firebase.firestore.FieldValue.arrayUnion(stock)
+    // })
+
+    firebase.firestore().collection('users').doc(currentID).get()
+      .then((doc) => {
+        if (doc.exists) {
+
+          const data = doc._data.watchlist
+          this.setState({ watchlist: data })
+          this.displayWatchlist(this.state.watchlist)
+          console.log(data)
+
+        } else {
+          alert('this user does not exists')
+        }
+      })
+  }
+
+  displayWatchlist = (watchlist) => {
+
+    let i = 0
+    return watchlist.map((element) => {
+      i += 1
+      return (
+        <View key={i} style={styles.stockCard}>
+          <FeaturedStockCard stock={stocks[element]} />
+        </View>
+      )
+
+    })
+  }
+
+  render() {
     return (
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.header}>
           <View style={styles.topBackground}>
             <View style={styles.headerStats}>
               <TouchableOpacity style={styles.statsContainer}>
-                <Text style={styles.stats}>69</Text>
+                <Text style={styles.stats}>{this.state.watchlist.length}</Text>
                 <Text style={styles.statsDesc}>stocks</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.statsContainer}>
@@ -46,20 +92,15 @@ class PortfolioScreen extends Component {
           </TouchableOpacity>
           <View style={styles.profileName}>
             <View style={styles.nameContainer}>
-              <Text style={styles.name}>{this.props.authUser}</Text>
+              <Text style={styles.name}>{this.props.authUserName}</Text>
               <Text style={styles.subtitle}>CEO of MEMELAND</Text>
             </View>
           </View>
         </View>
-        <View style={styles.stockCard}>
-          <FeaturedStockCard stock={stocks.google} />
-        </View>
-        <View style={styles.stockCard}>
-          <FeaturedStockCard stock={stocks.twitter} />
-        </View>
-        <View style={styles.stockCard}>
-          <FeaturedStockCard stock={stocks.amazon} />
-        </View>
+       
+        
+          {this.displayWatchlist(this.state.watchlist)}
+        
         <View style={styles.marginBottom} />
         
 
@@ -69,7 +110,8 @@ class PortfolioScreen extends Component {
 }
 
 const mapStateToProps = state => ({
-  authUser: state.authUser.name
+  authUser: state.authUser.id,
+  authUserName: state.authUser.name
   // userID: state.userID,
 })
 

@@ -51,7 +51,7 @@ const stockCards = [{
 }]
 
 const stocks = {
-  google: {
+  GOOGL: {
     stockName: "GOOGL",
     price: 1042.42,
     difference: 15.6,
@@ -61,7 +61,7 @@ const stocks = {
     data: [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80, 50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80],
     time: "3:43pm"
   },
-  twitter: {
+  TWTR: {
     stockName: "TWTR",
     price: 73,
     difference: -15.6,
@@ -71,7 +71,7 @@ const stocks = {
     data: [95, -4, -24, 85, 91, 35, 53, 91, 35, 53, -53, 24, 50, 50, 10, 40, 95, -4, -24, 85, -20, -80, 50, 10, 40, -53, 24, 50, -20, -80],
     time: "3:43pm"
   },
-  amazon: {
+  AMAZN: {
     stockName: "AMAZN",
     price: 1742.42,
     difference: 1.6,
@@ -81,7 +81,7 @@ const stocks = {
     data: [-4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80, 50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80, 50, 10, 40, 95],
     time: "3:43pm"
   },
-  facebook: {
+  FB: {
     stockName: "FB",
     price: 92.42,
     difference: -23.6,
@@ -91,7 +91,7 @@ const stocks = {
     data: [50, 50, 50],
     time: "3:43pm"
   },
-  aquired: {
+  AQR: {
     stockName: "AQR",
     price: 2042.69,
     difference: 420.6,

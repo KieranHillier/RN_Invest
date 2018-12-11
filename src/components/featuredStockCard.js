@@ -181,11 +181,8 @@ class FeaturedStockCard extends Component {
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 11, paddingBottom: 5 }}>
           <Text style={{ fontSize: 28, fontWeight: '500', color: colors.text }}>126 <Text style={{ fontSize: 12, fontWeight: '200' }}>last week</Text></Text>
           <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
-            <TouchableOpacity style={{ backgroundColor: '#FFB534', elevation: 2, justifyContent: 'center', alignItems: 'center', width: 80, borderRadius: 8, height: 30 }}>
-              <Text style={{ color: colors.main, fontWeight: 'bold', fontSize: 15 }}>PH</Text>
-            </TouchableOpacity>
             <TouchableOpacity onPress={() => this.watchlist(this.props.stock.stockName)} style={[styles.watchlistButton, this.state.watchlistPressed === 'Watchlisted' ? styles.pressed : styles.unPressed]}>
-              <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 15 }}>{this.state.watchlistPressed}</Text>
+              <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15 }}>{this.state.watchlistPressed}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -227,10 +224,10 @@ const styles = StyleSheet.create({
   watchlistButton: { 
     justifyContent: 'center', 
     alignItems: 'center', 
-    width: 100, 
+    width: 85, 
     borderRadius: 8, 
     marginLeft: 8, 
-    height: 33
+    height: 30,
   },
   pressed: {
     backgroundColor: 'white',

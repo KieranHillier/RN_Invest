@@ -6,6 +6,7 @@ import DetailedStockScreen from '../screens/app/other/detailedStock'
 import DiscoverStockScreen from '../screens/app/discover/headings/DiscoverStockScreen'
 import PortfolioScreen from '../screens/app/portfolio/PortfolioScreen'
 import DashBoardScreen from '../screens/app/dashboard/DashBoardScreen'
+import SearchScreen from '../screens/app/search/SearchScreen'
 
 createHeader = () => {
   return (
@@ -30,6 +31,19 @@ const DiscoverTopNavigator = {
       height: 50,
     },
   },
+}
+
+const SearchScreenContainer = {
+  screen: SearchScreen,
+  navigationOptions: {
+    headerTintColor: colors.main,
+    headerStyle: {
+      backgroundColor: colors.blue,
+      elevation: 0, // remove shadow on Android
+      shadowOpacity: 0, // remove shadow on iOS,
+      height: 50,
+    },
+  }
 }
 
 const DetailedStockss = {
@@ -66,6 +80,7 @@ const AppDrawerNavigator = createStackNavigator({
   Details: DetailedStockss,
   PortfolioScreenContainer,
   DashBoardScreenContainer,
+  SearchScreenContainer
 })
 
 export default AppDrawerNavigator
